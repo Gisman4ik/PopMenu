@@ -260,7 +260,7 @@ extension PopMenuViewController {
     /// Setup the content view.
     fileprivate func configureContentView() {
         containerView.translatesAutoresizingMaskIntoConstraints = false
-        containerView.addShadow(offset: .init(width: 0, height: 1), opacity: 0.5, radius: 20)
+//        containerView.addShadow(offset: .init(width: 0, height: 1), opacity: 0.5, radius: 20)
         containerView.layer.cornerRadius = appearance.popMenuCornerRadius
         containerView.backgroundColor = .clear
         
@@ -500,8 +500,8 @@ extension PopMenuViewController {
             NSLayoutConstraint.activate([
                 actionsView.leftAnchor.constraint(equalTo: contentView.leftAnchor),
                 actionsView.rightAnchor.constraint(equalTo: contentView.rightAnchor),
-                actionsView.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 4),
-                actionsView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -4)
+                actionsView.topAnchor.constraint(equalTo: contentView.topAnchor),
+                actionsView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor)
             ])
         }
     }
@@ -524,8 +524,8 @@ extension PopMenuViewController {
         actionView.addSubview(separatorView)
         
         NSLayoutConstraint.activate([
-            separatorView.leftAnchor.constraint(equalTo: actionView.leftAnchor),
-            separatorView.rightAnchor.constraint(equalTo: actionView.rightAnchor),
+            separatorView.leftAnchor.constraint(equalTo: actionView.leftAnchor, constant: 24),
+            separatorView.rightAnchor.constraint(equalTo: actionView.rightAnchor, constant: -24),
             separatorView.bottomAnchor.constraint(equalTo: actionView.bottomAnchor),
             separatorView.heightAnchor.constraint(equalToConstant: separator.height)
         ])

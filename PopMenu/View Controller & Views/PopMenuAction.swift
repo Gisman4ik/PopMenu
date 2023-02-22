@@ -161,8 +161,8 @@ public class PopMenuDefaultAction: NSObject, PopMenuAction {
     
     // MARK: - Constants
     
-    public static let textLeftPadding: CGFloat = 25
-    public static let iconLeftPadding: CGFloat = 18
+    public static let textLeftPadding: CGFloat = 16
+    public static let iconLeftPadding: CGFloat = 24
     
     // MARK: - Initializer
     
@@ -195,8 +195,8 @@ public class PopMenuDefaultAction: NSObject, PopMenuAction {
         view.addSubview(titleLabel)
         
         NSLayoutConstraint.activate([
-            titleLabel.leadingAnchor.constraint(equalTo: hasImage ? iconImageView.trailingAnchor : view.leadingAnchor, constant: hasImage ? 8 : PopMenuDefaultAction.textLeftPadding),
-            titleLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: 20),
+            titleLabel.leadingAnchor.constraint(equalTo: hasImage ? iconImageView.trailingAnchor : view.leadingAnchor, constant: PopMenuDefaultAction.textLeftPadding),
+            titleLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: 24),
             titleLabel.centerYAnchor.constraint(equalTo: view.centerYAnchor)
         ])
     }
