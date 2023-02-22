@@ -433,8 +433,8 @@ extension PopMenuViewController {
             
             contentFitWidth += action.iconWidthHeight
         }
-        
-        return min(contentFitWidth,maxContentWidth)
+        let width = min(contentFitWidth, maxContentWidth)
+        return max(width, 240)
     }
     
     /// Setup actions view.
@@ -448,6 +448,7 @@ extension PopMenuViewController {
         actions.forEach { action in
             action.font = appearance.popMenuFont
             action.tintColor = action.color ?? appearance.popMenuColor.actionColor.color
+            action.textColor = action.textColor
             action.cornerRadius = appearance.popMenuCornerRadius / 2
             action.renderActionView()
             

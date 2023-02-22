@@ -38,6 +38,8 @@ import UIKit
     /// The color to set for both label and icon.
     var tintColor: UIColor { get set }
     
+    var textColor: UIColor { get set }
+    
     /// The font for label.
     var font: UIFont { get set }
     
@@ -87,12 +89,20 @@ public class PopMenuDefaultAction: NSObject, PopMenuAction {
     /// Text color of the label.
     public var tintColor: Color {
         get {
+            return iconImageView.tintColor
+        }
+        set {
+            iconImageView.tintColor = newValue
+            backgroundColor = newValue.blackOrWhiteContrastingColor()
+        }
+    }
+    
+    public var textColor: Color {
+        get {
             return titleLabel.textColor
         }
         set {
             titleLabel.textColor = newValue
-            iconImageView.tintColor = newValue
-            backgroundColor = newValue.blackOrWhiteContrastingColor()
         }
     }
     
