@@ -93,7 +93,6 @@ public class PopMenuDefaultAction: NSObject, PopMenuAction {
         }
         set {
             iconImageView.tintColor = newValue
-            backgroundColor = newValue.blackOrWhiteContrastingColor()
         }
     }
     
